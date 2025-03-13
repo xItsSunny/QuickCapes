@@ -18,9 +18,6 @@ public class GuiQuickCapes extends GuiScreen {
     private GuiButton buttonPrev;
     private GuiButton buttonNext;
     private GuiButton buttonEnable;
-    private GuiButton buttonFolder;
-    private GuiButton buttonLoad;
-    public File directory;
 
     public GuiQuickCapes() {
     }
