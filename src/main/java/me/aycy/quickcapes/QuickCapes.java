@@ -16,7 +16,7 @@ import net.minecraftforge.fml.common.event.FMLPreInitializationEvent;
 @Mod(
         modid = "quickcapes",
         name = "Quick Capes",
-        version = "1.1",
+        version = "1.2",
         clientSideOnly = true,
         acceptedMinecraftVersions = "[1.8.9]"
 )

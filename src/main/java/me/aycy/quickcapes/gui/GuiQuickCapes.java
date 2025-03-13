@@ -31,8 +31,6 @@ public class GuiQuickCapes extends GuiScreen {
         super.buttonList.add(this.buttonNext = new GuiButton(1, super.width / 2 + 65, super.height / 2 - 10, 14, 20, ">"));
         boolean flag = QuickCapes.config.isEnabled();
         super.buttonList.add(this.buttonEnable = new GuiButton(5, super.width / 2 - 50, super.height - 35, 100, 20, "Cape: " + (flag ? EnumChatFormatting.GREEN + "On" : EnumChatFormatting.RED + "Off")));
-        super.buttonList.add(this.buttonFolder = new GuiButton(6, super.width / 2 - 150, super.height - 35, 100, 20, "Open Folder"));
-        super.buttonList.add(this.buttonLoad = new GuiButton(7, super.width / 2 - -50, super.height - 35, 100, 20, "Load Capes"));
         this.buttonPrev.enabled = flag;
         this.buttonNext.enabled = flag;
     }
@@ -71,23 +69,6 @@ public class GuiQuickCapes extends GuiScreen {
                 this.buttonEnable.displayString = "Cape: " + (flag ? EnumChatFormatting.GREEN + "On" : EnumChatFormatting.RED + "Off");
                 this.buttonPrev.enabled = flag;
                 this.buttonNext.enabled = flag;
-                break;
-            case 6:
-                directory = new File(mc.mcDataDir + File.separator + "quickcapes", "capes");
-                if (!directory.exists()) {
-                    boolean success = directory.mkdirs();
-                    if (!success)
-                        System.out.println("There was an issue creating customCapes directory.");
-                }
-                try {
-                    Desktop.getDesktop().open(directory);
-                } catch (IOException ex) {
-                    directory.mkdirs();
-                    System.out.println("Error locating folder, recreated.");
-                    this.buttonFolder.displayString = "Cape Folder";
-                }
-            case 7:
-                
                 break;
         }
 
