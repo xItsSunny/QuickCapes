@@ -1,6 +1,7 @@
 package me.aycy.quickcapes.cape;
 
 public enum Cape {
+    yearn("Yearn"),
     menace("Menace"),
     home("Home"),
     xmas("Xmas"),
