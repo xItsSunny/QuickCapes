@@ -1,6 +1,9 @@
 package me.aycy.quickcapes.cape;
 
 public enum Cape {
+    oxeye("Oxeye"),
+    founders("Founders"),
+    pan("Pan"),
     common("Common"),
     yearn("Yearn"),
     menace("Menace"),
