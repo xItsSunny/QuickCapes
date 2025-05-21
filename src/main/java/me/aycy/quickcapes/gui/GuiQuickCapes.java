@@ -11,6 +11,7 @@ import me.aycy.quickcapes.utils.RenderUtils;
 import net.minecraft.client.gui.Gui;
 import net.minecraft.client.gui.GuiButton;
 import net.minecraft.client.gui.GuiScreen;
+import net.minecraft.client.renderer.GlStateManager;
 import net.minecraft.util.EnumChatFormatting;
 import org.lwjgl.opengl.GL11;
 

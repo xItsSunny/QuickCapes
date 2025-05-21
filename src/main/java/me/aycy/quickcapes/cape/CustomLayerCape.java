@@ -27,7 +27,6 @@ public class CustomLayerCape implements LayerRenderer<AbstractClientPlayer> {
                 GlStateManager.translate(0.0F, 0.0F, 0.125F);
             }
 
-            GlStateManager.disableLighting();
             double x = player.prevChasingPosX + (player.chasingPosX - player.prevChasingPosX) * (double)partialTicks - (player.prevPosX + (player.posX - player.prevPosX) * (double)partialTicks);
             double y = player.prevChasingPosY + (player.chasingPosY - player.prevChasingPosY) * (double)partialTicks - (player.prevPosY + (player.posY - player.prevPosY) * (double)partialTicks);
             double z = player.prevChasingPosZ + (player.chasingPosZ - player.prevChasingPosZ) * (double)partialTicks - (player.prevPosZ + (player.posZ - player.prevPosZ) * (double)partialTicks);
