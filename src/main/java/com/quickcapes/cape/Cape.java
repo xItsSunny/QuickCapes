@@ -1,4 +1,4 @@
-package me.aycy.quickcapes.cape;
+package com.quickcapes.cape;
 
 public enum Cape {
     oxeye("Oxeye"),

@@ -1,12 +1,18 @@
 [
-{
-  "modid": "quickcapes",
-  "name": "Quick Capes",
-  "description": "Your own personal cape. | Original Mod by Aycy, continued by xItsSunny.",
-  "version": "1.9.1",
-  "mcversion": "1.8.9",
-  "url": "https://youtube.com/@xItsSunny",
-  "authorList": ["Aycy, xItsSunny"],
-  "logoFile": "quickcapes-logo.png"
-}
+  {
+    "modid": "${modid}",
+    "name": "QuickCapes",
+    "description": "Your own personal cape. | Original Mod by Aycy, continued by xItsSunny.",
+    "version": "${version}",
+    "mcversion": "${mcversion}",
+    "url": "https://youtube.com/@xItsSunny",
+    "updateUrl": "",
+    "authorList": [
+      "Aycy, xItsSunny"
+    ],
+    "credits": "",
+    "logoFile": "quickcapes-logo.png",
+    "screenshots": [],
+    "dependencies": []
+  }
 ]

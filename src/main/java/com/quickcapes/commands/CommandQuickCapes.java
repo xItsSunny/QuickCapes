@@ -1,7 +1,7 @@
-package me.aycy.quickcapes.commands;
+package com.quickcapes.commands;
 
-import me.aycy.quickcapes.QuickCapes;
-import me.aycy.quickcapes.gui.GuiQuickCapes;
+import com.quickcapes.QuickCapes;
+import com.quickcapes.gui.GuiQuickCapes;
 import net.minecraft.command.CommandBase;
 import net.minecraft.command.ICommandSender;
 import net.minecraft.util.EnumChatFormatting;

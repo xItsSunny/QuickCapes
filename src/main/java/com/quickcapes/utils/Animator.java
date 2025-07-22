@@ -1,4 +1,4 @@
-package me.aycy.quickcapes.utils;
+package com.quickcapes.utils;
 
 public class Animator {
     private float f;

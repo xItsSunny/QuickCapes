@@ -1,8 +1,9 @@
-package me.aycy.quickcapes.config;
+package com.quickcapes.config;
 
 import java.io.File;
-import me.aycy.quickcapes.cape.Cape;
-import me.aycy.quickcapes.cape.CustomLayerCape;
+
+import com.quickcapes.cape.Cape;
+import com.quickcapes.cape.CapeSetter;
 import net.minecraftforge.common.config.Configuration;
 
 public class Config extends Configuration {
@@ -16,7 +17,7 @@ public class Config extends Configuration {
     public void load() {
         super.load();
         enabled = super.get("client", "enabled", true).getBoolean();
-        CustomLayerCape.setCape(cape = Cape.getCape(super.get("client", "cape", "minecon_2016.png").getString()));
+        CapeSetter.setCape(cape = Cape.getCape(super.get("client", "cape", "minecon_2016.png").getString()));
         super.save();
     }
 

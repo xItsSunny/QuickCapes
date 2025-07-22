@@ -1,6 +1,6 @@
-package me.aycy.quickcapes.utils;
+package com.quickcapes.utils;
 
-import me.aycy.quickcapes.QuickCapes;
+import com.quickcapes.QuickCapes;
 import net.minecraft.client.renderer.GlStateManager;
 import net.minecraft.client.renderer.OpenGlHelper;
 import net.minecraft.client.renderer.RenderHelper;

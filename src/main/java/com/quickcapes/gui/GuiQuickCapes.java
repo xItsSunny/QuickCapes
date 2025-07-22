@@ -1,17 +1,12 @@
-package me.aycy.quickcapes.gui;
+package com.quickcapes.gui;
 
-import java.awt.*;
-import java.io.File;
-import java.io.IOException;
 import java.util.Collections;
-import me.aycy.quickcapes.QuickCapes;
-import me.aycy.quickcapes.cape.Cape;
-import me.aycy.quickcapes.cape.CustomLayerCape;
-import me.aycy.quickcapes.utils.RenderUtils;
-import net.minecraft.client.gui.Gui;
+import com.quickcapes.QuickCapes;
+import com.quickcapes.cape.CapeSetter;
+import com.quickcapes.utils.RenderUtils;
 import net.minecraft.client.gui.GuiButton;
 import net.minecraft.client.gui.GuiScreen;
-import net.minecraft.client.renderer.GlStateManager;
+import net.minecraft.client.renderer.OpenGlHelper;
 import net.minecraft.util.EnumChatFormatting;
 import org.lwjgl.opengl.GL11;
 
@@ -55,11 +50,11 @@ public class GuiQuickCapes extends GuiScreen {
         switch (button.id) {
             case 0:
                 QuickCapes.config.setCape(QuickCapes.config.getCape().prev());
-                CustomLayerCape.setCape(QuickCapes.config.getCape());
+                CapeSetter.setCape(QuickCapes.config.getCape());
                 break;
             case 1:
                 QuickCapes.config.setCape(QuickCapes.config.getCape().next());
-                CustomLayerCape.setCape(QuickCapes.config.getCape());
+                CapeSetter.setCape(QuickCapes.config.getCape());
                 break;
             case 5:
                 boolean flag = !QuickCapes.config.isEnabled();
@@ -74,5 +69,6 @@ public class GuiQuickCapes extends GuiScreen {
 
     public void onGuiClosed() {
         QuickCapes.config.save();
+        OpenGlHelper.setLightmapTextureCoords(OpenGlHelper.lightmapTexUnit, 240f, 240f);
     }
 }
