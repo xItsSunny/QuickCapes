@@ -1,6 +1,7 @@
 package com.quickcapes.cape;
 
 public enum Cape {
+    test("Test"),
     oxeye("Oxeye"),
     founders("Founders"),
     pan("Pan"),

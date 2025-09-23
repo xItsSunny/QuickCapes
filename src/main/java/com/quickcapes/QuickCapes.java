@@ -4,6 +4,7 @@ import com.quickcapes.commands.CommandQuickCapes;
 import com.quickcapes.config.Config;
 import net.minecraft.client.Minecraft;
 import net.minecraftforge.client.ClientCommandHandler;
+import net.minecraftforge.common.MinecraftForge;
 import net.minecraftforge.fml.common.Loader;
 import net.minecraftforge.fml.common.Mod;
 import net.minecraftforge.fml.common.event.FMLInitializationEvent;
@@ -27,5 +28,6 @@ public class QuickCapes {
     @Mod.EventHandler
     public void onInit(FMLInitializationEvent event) {
         ClientCommandHandler.instance.registerCommand(new CommandQuickCapes());
+        MinecraftForge.EVENT_BUS.register(new com.quickcapes.utils.TickManager());
     }
 }
