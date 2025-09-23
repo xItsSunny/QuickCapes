@@ -16,7 +16,7 @@ All of those capes can be selected with a very simple gui.
 ## To do:
 - Animated Capes (DONE, Beta OUT)
 - Ability to add own capes (DONE, Beta soon)
-- Making other users being able to see the cape, so it isn't only Client-side anymore (Done, no plannes for Beta yet)
+- Making other users being able to see the cape, so it isn't only Client-side anymore (Done, no plans for Beta yet)
 
 ## 
 This mod is mainly a result of the hard work of Aycy, so this was only possible thanks to him. Sadly he quit the developement of his mods a while ago, so I wasn't able to ask him directly for permission. So if someone who isnt fine with the existance of this mod sees that, please contact my on discord under the username ".xitssunny"!
