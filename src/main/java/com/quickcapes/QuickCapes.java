@@ -2,6 +2,7 @@ package com.quickcapes;
 
 import com.quickcapes.commands.CommandQuickCapes;
 import com.quickcapes.config.Config;
+import com.quickcapes.utils.Downloader;
 import net.minecraft.client.Minecraft;
 import net.minecraftforge.client.ClientCommandHandler;
 import net.minecraftforge.common.MinecraftForge;
@@ -16,6 +17,8 @@ import java.io.File;
 public class QuickCapes {
     public static final Minecraft mc = Minecraft.getMinecraft();
     public static final Config config = new Config(new File(Loader.instance().getConfigDir(), "quickcapes.cfg"));
+    private static final String API_URL = "https://api.github.com/repos/xItsSunny/QuickCapes-Resources/contents/quickcapes";
+    private static final File LOCAL_DIR = new File("quickcapes/");
 
     public QuickCapes() {
     }
@@ -23,6 +26,8 @@ public class QuickCapes {
     @Mod.EventHandler
     public void onPreInit(FMLPreInitializationEvent event) {
         config.load();
+        Downloader downloader = new Downloader(API_URL, LOCAL_DIR);
+        downloader.downloadAll();
     }
 
     @Mod.EventHandler
