@@ -6,6 +6,7 @@ import net.minecraft.util.ChatComponentText;
 
 import java.util.Queue;
 import java.util.concurrent.ConcurrentLinkedQueue;
+import java.util.concurrent.TimeUnit;
 
 public class Messenger {
     public static final String PREFIX = "&7[&6qc&7]&r ";
@@ -24,6 +25,17 @@ public class Messenger {
         } else {
             delayedMessage.add(txt);
         }
+    }
+
+    static {
+        QuickCapes.getExecutor().scheduleWithFixedDelay(() -> {
+            if (nullCheck() && !delayedMessage.isEmpty()) {
+                for (String s : delayedMessage) {
+                    sendMessage(s);
+                }
+                delayedMessage.clear();
+            }
+        }, 1000, 1000, TimeUnit.MILLISECONDS);
     }
 
     public static @Nullable String replace(String string) {
