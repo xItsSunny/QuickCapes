@@ -27,7 +27,6 @@ public class QuickCapes {
     private static final String API_URL = "https://api.github.com/repos/xItsSunny/QuickCapes-Resources/contents/quickcapes";
     private static final File LOCAL_DIR = new File("quickcapes/");
     public static final String VERSION = Info.VERSION;
-    public static String updateJsonContent;
     @Getter
     private static final ScheduledExecutorService executor = Executors.newScheduledThreadPool(8);
 

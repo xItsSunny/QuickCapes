@@ -18,15 +18,6 @@ import java.util.stream.Stream;
 import java.util.zip.ZipEntry;
 import java.util.zip.ZipInputStream;
 
-/**
- * A mixin plugin to automatically discover all mixins in the current JAR.
- * <p>
- * This mixin plugin automatically scans your entire JAR (or class directory, in case of an in-IDE launch) for classes inside of your
- * mixin package and registers those. It does this recursively for sub packages of the mixin package as well. This means you will need
- * to only have mixin classes inside of your mixin package, which is good style anyway.
- *
- * @author Linnea Gräf
- */
 public class AutoDiscoveryMixinPlugin implements IMixinConfigPlugin {
     private static final List<AutoDiscoveryMixinPlugin> mixinPlugins = new ArrayList<>();
 
@@ -42,11 +33,6 @@ public class AutoDiscoveryMixinPlugin implements IMixinConfigPlugin {
         mixinPlugins.add(this);
     }
 
-    /**
-     * Resolves the base class root for a given class URL. This resolves either the JAR root, or the class file root.
-     * In either case the return value of this + the class name will resolve back to the original class url, or to other
-     * class urls for other classes.
-     */
     public URL getBaseUrlForClassUrl(URL classUrl) {
         String string = classUrl.toString();
         if (classUrl.getProtocol().equals("jar")) {
@@ -68,32 +54,16 @@ public class AutoDiscoveryMixinPlugin implements IMixinConfigPlugin {
         return classUrl;
     }
 
-    /**
-     * Get the package that contains all the mixins. This value is set by mixin itself using {@link #onLoad}.
-     */
     public String getMixinPackage() {
         return mixinPackage;
     }
 
-    /**
-     * Get the path inside the class root to the mixin package
-     */
     public String getMixinBaseDir() {
         return mixinPackage.replace(".", "/");
     }
 
-    /**
-     * A list of all discovered mixins.
-     */
     private List<String> mixins = null;
 
-    /**
-     * Try to add mixin class ot the mixins based on the filepath inside of the class root.
-     * Removes the {@code .class} file suffix, as well as the base mixin package.
-     * <p><b>This method cannot be called after mixin initialization.</p>
-     *
-     * @param className the name or path of a class to be registered as a mixin.
-     */
     public void tryAddMixinClass(String className) {
         String norm = (className.endsWith(".class") ? className.substring(0, className.length() - ".class".length()) : className)
                 .replace("\\", "/")
@@ -103,9 +73,6 @@ public class AutoDiscoveryMixinPlugin implements IMixinConfigPlugin {
         }
     }
 
-    /**
-     * Search through the JAR or class directory to find mixins contained in {@link #getMixinPackage()}
-     */
     @Override
     public List<String> getMixins() {
         if (mixins != null) return mixins;
@@ -130,11 +97,6 @@ public class AutoDiscoveryMixinPlugin implements IMixinConfigPlugin {
         return mixins;
     }
 
-    /**
-     * Search through directory for mixin classes based on {@link #getMixinBaseDir}.
-     *
-     * @param classRoot The root directory in which classes are stored for the default package.
-     */
     private void walkDir(Path classRoot) {
         System.out.println("Trying to find mixins from directory");
         try (Stream<Path> classes = Files.walk(classRoot.resolve(getMixinBaseDir()))) {
@@ -145,9 +107,6 @@ public class AutoDiscoveryMixinPlugin implements IMixinConfigPlugin {
         }
     }
 
-    /**
-     * Read through a JAR file, trying to find all mixins inside.
-     */
     private void walkJar(Path file) {
         System.out.println("Trying to find mixins from jar file");
         try (ZipInputStream zis = new ZipInputStream(Files.newInputStream(file))) {
