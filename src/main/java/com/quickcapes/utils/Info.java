@@ -14,6 +14,7 @@ public class Info {
             "-[+] **Add** Support for animated capes",
             "-[+] **Add** Automatic mod updates",
             "-[+] **Add** Changelog system",
+            "-[+] **Add** Help system",
             "-[+] **WIP** Texture downloading instead of in jar",
             "-[+] **WIP** Dynamic cape updating"
             ));
