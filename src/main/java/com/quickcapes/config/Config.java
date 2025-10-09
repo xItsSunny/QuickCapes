@@ -7,6 +7,7 @@ import com.quickcapes.cape.CapeSetter;
 import net.minecraftforge.common.config.Configuration;
 
 public class Config extends Configuration {
+    private static boolean info;
     private static boolean enabled;
     private static Cape cape;
 
@@ -17,14 +18,24 @@ public class Config extends Configuration {
     public void load() {
         super.load();
         enabled = super.get("client", "enabled", true).getBoolean();
+        info = super.get("client", "info", true).getBoolean();
         CapeSetter.setCape(cape = Cape.getCape(super.get("client", "cape", "minecon_2016.png").getString()));
         super.save();
     }
 
     public void save() {
         super.get("client", "enabled", true).set(enabled);
+        super.get("client", "info", true).set(info);
         super.get("client", "cape", "minecon_2016.png").set(cape.resource);
         super.save();
+    }
+
+    public boolean isInfo() {
+        return info;
+    }
+
+    public void setInfo(boolean info) {
+        Config.info = info;
     }
 
     public boolean isEnabled() {

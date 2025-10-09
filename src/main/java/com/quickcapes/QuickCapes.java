@@ -1,11 +1,13 @@
 package com.quickcapes;
 
 import com.quickcapes.commands.CommandChangelog;
+import com.quickcapes.commands.CommandHelp;
 import com.quickcapes.commands.CommandQuickCapes;
 import com.quickcapes.commands.CommandUpdate;
 import com.quickcapes.config.Config;
 import com.quickcapes.utils.AutoUpdater;
 import com.quickcapes.utils.Downloader;
+import com.quickcapes.utils.Helper;
 import com.quickcapes.utils.Info;
 import lombok.Getter;
 import net.minecraft.client.Minecraft;
@@ -45,8 +47,10 @@ public class QuickCapes {
         ClientCommandHandler.instance.registerCommand(new CommandQuickCapes());
         ClientCommandHandler.instance.registerCommand(new CommandUpdate());
         ClientCommandHandler.instance.registerCommand(new CommandChangelog());
+        ClientCommandHandler.instance.registerCommand(new CommandHelp());
         MinecraftForge.EVENT_BUS.register(new com.quickcapes.utils.TickManager());
         Runtime.getRuntime().addShutdownHook(new Thread(executor::shutdown));
         AutoUpdater.init();
+        Helper.init();
     }
 }

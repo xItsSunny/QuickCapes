@@ -10,10 +10,16 @@ public class Info {
             "&3QuickCapes &6" + VERSION + " &3Changelog:",
             "-[+] **Rework** Cape enum turned into class",
             "-[+] **Rework** Cape rendering system",
+            "-[+] **Add** Help message at first launch",
             "-[+] **Add** Support for animated capes",
             "-[+] **Add** Automatic mod updates",
             "-[+] **Add** Changelog system",
             "-[+] **WIP** Texture downloading instead of in jar",
             "-[+] **WIP** Dynamic cape updating"
             ));
+    public static final List<String> HELP = Collections.unmodifiableList(Arrays.asList(
+            "Use the command /capes to open the gui.",
+            "Use the command /qcchangelog to see the newest changes.",
+            "Use the command /qcupdate to update the mod."
+    ));
 }
