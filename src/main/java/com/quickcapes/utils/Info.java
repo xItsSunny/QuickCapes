@@ -5,13 +5,14 @@ import java.util.Collections;
 import java.util.List;
 
 public class Info {
-    public static final String VERSION = "2.0.3";
+    public static final String VERSION = "2.0.4";
     public static final List<String> CHANGELOG = Collections.unmodifiableList(Arrays.asList(
             "&3QuickCapes &6" + VERSION + " &3Changelog:",
             "-[+] **Rework** Cape enum turned into class",
             "-[+] **Rework** Cape rendering system",
             "-[+] **Add** Help message at first launch",
             "-[+] **Add** Support for animated capes",
+            "-[+] **Add** Player Number Tracker",
             "-[+] **Add** Automatic mod updates",
             "-[+] **Add** Changelog system",
             "-[+] **Add** Help system",
