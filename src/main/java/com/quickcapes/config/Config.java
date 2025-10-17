@@ -9,6 +9,7 @@ import net.minecraftforge.common.config.Configuration;
 public class Config extends Configuration {
     private static boolean info;
     private static boolean enabled;
+    private static boolean showupdate;
     private static Cape cape;
 
     public Config(File configFile) {
@@ -19,6 +20,7 @@ public class Config extends Configuration {
         super.load();
         enabled = super.get("client", "enabled", true).getBoolean();
         info = super.get("client", "info", true).getBoolean();
+        showupdate = super.get("client", "showupdate", true).getBoolean();
         CapeSetter.setCape(cape = Cape.getCape(super.get("client", "cape", "minecon_2016.png").getString()));
         super.save();
     }
@@ -26,6 +28,7 @@ public class Config extends Configuration {
     public void save() {
         super.get("client", "enabled", true).set(enabled);
         super.get("client", "info", true).set(info);
+        super.get("client", "showupdate", true).set(showupdate);
         super.get("client", "cape", "minecon_2016.png").set(cape.resource);
         super.save();
     }
@@ -36,6 +39,14 @@ public class Config extends Configuration {
 
     public void setInfo(boolean info) {
         Config.info = info;
+    }
+
+    public boolean isShowupdate() {
+        return showupdate;
+    }
+
+    public void setShowupdate(boolean showupdate) {
+        Config.showupdate = showupdate;
     }
 
     public boolean isEnabled() {

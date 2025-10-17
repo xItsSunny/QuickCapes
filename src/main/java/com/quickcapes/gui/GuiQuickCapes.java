@@ -14,6 +14,7 @@ public class GuiQuickCapes extends GuiScreen {
     private GuiButton buttonPrev;
     private GuiButton buttonNext;
     private GuiButton buttonEnable;
+    private GuiButton buttonShowUpdate;
 
     public GuiQuickCapes() {
     }
@@ -24,6 +25,8 @@ public class GuiQuickCapes extends GuiScreen {
         super.buttonList.add(this.buttonNext = new GuiButton(1, super.width / 2 + 65, super.height / 2 - 10, 14, 20, ">"));
         boolean flag = QuickCapes.config.isEnabled();
         super.buttonList.add(this.buttonEnable = new GuiButton(5, super.width / 2 - 50, super.height - 35, 100, 20, "Cape: " + (flag ? EnumChatFormatting.GREEN + "On" : EnumChatFormatting.RED + "Off")));
+        boolean flagUpdateMessage = QuickCapes.config.isShowupdate();
+        super.buttonList.add(this.buttonShowUpdate = new GuiButton(6, super.width - 125 - 10, 10, 125, 20, "Update Message: " + (flagUpdateMessage ? EnumChatFormatting.GREEN + "On" : EnumChatFormatting.RED + "Off")));
         this.buttonPrev.enabled = flag;
         this.buttonNext.enabled = flag;
     }
@@ -62,6 +65,11 @@ public class GuiQuickCapes extends GuiScreen {
                 this.buttonEnable.displayString = "Cape: " + (flag ? EnumChatFormatting.GREEN + "On" : EnumChatFormatting.RED + "Off");
                 this.buttonPrev.enabled = flag;
                 this.buttonNext.enabled = flag;
+                break;
+            case 6:
+                boolean flagUpdateMessage = !QuickCapes.config.isShowupdate();
+                QuickCapes.config.setShowupdate(flagUpdateMessage);
+                this.buttonShowUpdate.displayString = "Update Message: " + (flagUpdateMessage ? EnumChatFormatting.GREEN + "On" : EnumChatFormatting.RED + "Off");
                 break;
         }
 

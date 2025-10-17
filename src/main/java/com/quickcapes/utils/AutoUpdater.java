@@ -23,16 +23,18 @@ import java.io.InputStream;
 public class AutoUpdater {
     public static void init() {
         QuickCapes.getExecutor().execute(() -> {
-            @NotNull Result result = checkVersion();
-            switch (result.getType()) {
-                case FAIL:
-                    Messenger.sendMessageAnyWay(ChatFormatting.RED + "Fail to check latest version.");
-                    break;
-                case OLD:
-                    Messenger.sendMessageAnyWay(ChatFormatting.RED + "You are not at latest version." +
-                            ChatFormatting.RESET + " current: " + QuickCapes.VERSION + "  latest: " + result.getLatestVersion());
-                    Messenger.sendMessageAnyWay("Run command /qcupdate to download latest version.");
-                    break;
+            if (QuickCapes.config.isShowupdate()) {
+                @NotNull Result result = checkVersion();
+                switch (result.getType()) {
+                    case FAIL:
+                        Messenger.sendMessageAnyWay(ChatFormatting.RED + "Fail to check latest version.");
+                        break;
+                    case OLD:
+                        Messenger.sendMessageAnyWay(ChatFormatting.RED + "You are not at latest version." +
+                                ChatFormatting.RESET + " current: " + QuickCapes.VERSION + "  latest: " + result.getLatestVersion());
+                        Messenger.sendMessageAnyWay("Run command /qcupdate to download latest version.");
+                        break;
+                }
             }
         });
     }

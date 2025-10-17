@@ -12,10 +12,12 @@ public class Info {
             "-[+] **Rework** Cape rendering system",
             "-[+] **Add** Help message at first launch",
             "-[+] **Add** Support for animated capes",
+            "-[+] **Add** Toggle for Update Message",
             "-[+] **Add** Player Number Tracker",
             "-[+] **Add** Automatic mod updates",
             "-[+] **Add** Changelog system",
             "-[+] **Add** Help system",
+            "-[+] **FIX** Essential Capes Overlapping",
             "-[+] **WIP** Texture downloading instead of in jar",
             "-[+] **WIP** Dynamic cape updating"
             ));
