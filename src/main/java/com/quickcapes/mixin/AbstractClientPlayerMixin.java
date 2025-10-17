@@ -9,7 +9,7 @@ import org.spongepowered.asm.mixin.injection.At;
 import org.spongepowered.asm.mixin.injection.Inject;
 import org.spongepowered.asm.mixin.injection.callback.CallbackInfoReturnable;
 
-@Mixin(AbstractClientPlayer.class)
+@Mixin(value = AbstractClientPlayer.class, priority = 500)
 public class AbstractClientPlayerMixin {
 
     @Inject(method = "getLocationCape", at = @At("HEAD"), cancellable = true)
@@ -17,4 +17,3 @@ public class AbstractClientPlayerMixin {
         if ((AbstractClientPlayer) (Object) this == Minecraft.getMinecraft().thePlayer && CapeSetter.canRender()) cir.setReturnValue(CapeSetter.cape);
     }
 }
-
