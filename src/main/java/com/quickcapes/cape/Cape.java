@@ -1,108 +1,131 @@
 package com.quickcapes.cape;
 
-import java.util.ArrayList;
-import java.util.Collections;
-import java.util.List;
+public enum Cape {
 
-public class Cape {
-    private static final List<Cape> CAPES = new ArrayList<>();
+    // Account-related capes
+    PAN("Pan Cape", "Pan_Cape.png"),
+    MIGRATOR("Migrator Cape", "Migrator_Cape.png"),
+    VANILLA("Vanilla Cape", "Vanilla_Cape.png"),
+    COMMON("Common Cape", "Common_Cape.png"),
 
-    public static final Cape test = new Cape("Test");
-    public static final Cape oxeye = new Cape("Oxeye");
-    public static final Cape founders = new Cape("Founders");
-    public static final Cape pan = new Cape("Pan");
-    public static final Cape common = new Cape("Common");
-    public static final Cape yearn = new Cape("Yearn");
-    public static final Cape menace = new Cape("Menace");
-    public static final Cape home = new Cape("Home");
-    public static final Cape xmas = new Cape("Xmas");
-    public static final Cape vanillacape = new Cape("VanillaCape");
-    public static final Cape valentinecape = new Cape("ValentineCape");
-    public static final Cape twitchcape = new Cape("TwitchCape");
-    public static final Cape turtle = new Cape("Turtle");
-    public static final Cape translator_japan = new Cape("Translator_Japan");
-    public static final Cape translator_crowdin = new Cape("Translator_Crowdin");
-    public static final Cape translator_chinese = new Cape("Translator_Chinese");
-    public static final Cape tiktokcape = new Cape("TikTokCape");
-    public static final Cape sniffercape = new Cape("SnifferCape");
-    public static final Cape snailcape = new Cape("SnailCape");
-    public static final Cape scrolls = new Cape("Scrolls");
-    public static final Cape realms = new Cape("Realms");
-    public static final Cape prismarine = new Cape("Prismarine");
-    public static final Cape oldmojang = new Cape("OldMojang");
-    public static final Cape newyears = new Cape("NewYears");
-    public static final Cape newmojang = new Cape("NewMojang");
-    public static final Cape mscape = new Cape("MSCape");
-    public static final Cape mrmessiah = new Cape("MrMessiah");
-    public static final Cape mojangstudios = new Cape("MojangStudios");
-    public static final Cape minecraftexperience = new Cape("MinecraftExperience");
-    public static final Cape mcchampionship = new Cape("MCChampionship");
-    public static final Cape julianclark = new Cape("JulianClark");
-    public static final Cape gr8_escape = new Cape("Gr8_Escape");
-    public static final Cape frogcape = new Cape("FrogCape");
-    public static final Cape dannybstyle = new Cape("dannyBstyle");
-    public static final Cape cubed = new Cape("Cubed");
-    public static final Cape cobalt = new Cape("Cobalt");
-    public static final Cape fifteenanniversary = new Cape("FifteenAnniversary");
-    public static final Cape cherryblossom = new Cape("CherryBlossom");
-    public static final Cape bugtracker = new Cape("BugTracker");
-    public static final Cape bacon = new Cape("Bacon");
-    public static final Cape millionth_customer = new Cape("Millionth_Customer");
-    public static final Cape eyeblossom = new Cape("Eyeblossom");
-    public static final Cape unused_14 = new Cape("Unused_14");
-    public static final Cape unused_13 = new Cape("Unused_13");
-    public static final Cape unused_12 = new Cape("Unused_12");
-    public static final Cape unused_11 = new Cape("Unused_11");
-    public static final Cape unused_10 = new Cape("Unused_10");
-    public static final Cape unused_9 = new Cape("Unused_9");
-    public static final Cape unused_8 = new Cape("Unused_8");
-    public static final Cape unused_7 = new Cape("Unused_7");
-    public static final Cape unused_6 = new Cape("Unused_6");
-    public static final Cape unused_5 = new Cape("Unused_5");
-    public static final Cape unused_4 = new Cape("Unused_4");
-    public static final Cape unused_3 = new Cape("Unused_3");
-    public static final Cape unused_2 = new Cape("Unused_2");
-    public static final Cape unused_1 = new Cape("Unused_1");
-    public static final Cape minecon_2016 = new Cape("Minecon_2016");
-    public static final Cape minecon_2015 = new Cape("Minecon_2015");
-    public static final Cape minecon_2013 = new Cape("Minecon_2013");
-    public static final Cape minecon_2012 = new Cape("Minecon_2012");
-    public static final Cape minecon_2011 = new Cape("Minecon_2011");
+    // Staff capes
+    CLASSIC_MOJANG("Classic Mojang Cape", "Classic_Mojang_Cape.png"),
+    MICROSOFT_XBOX("Microsoft Xbox Cape", "Microsoft_Xbox_Cape.png"),
+    FOUR_J_STUDIOS("4J Studios Cape", "4J_Studios_Cape.png"),
+    MOJANG("Mojang Cape", "Mojang_Cape.png"),
+    MOJANG_STUDIOS("Mojang Studios Cape", "Mojang_Studios_Cape.png"),
+
+    // Physical event capes
+    MINECON_2011("MINECON 2011 Cape", "MINECON_2011_Cape.png"),
+    MINECON_2012("MINECON 2012 Cape", "MINECON_2012_Cape.png"),
+    MINECON_2013("MINECON 2013 Cape", "MINECON_2013_Cape.png"),
+    MINECON_2015("MINECON 2015 Cape", "MINECON_2015_Cape.png"),
+    MINECON_2016("MINECON 2016 Cape", "MINECON_2016_Cape.png"),
+    MINECRAFT_EXPERIENCE("Minecraft Experience Cape", "Minecraft_Experience_Cape.png"),
+    MOONLIGHT_TRAIL("Moonlight Trail Cape", "Moonlight_Trail_Cape.png"),
+    CRAFTER("Crafter Cape", "Crafter_Cape.png"),
+
+    // Virtual event capes
+    FOUNDERS("Founder's Cape", "Founder's_Cape.png"),
+    PROGRESS_PRIDE("Progress Pride Cape", "Progress_Pride_Cape.png"),
+    CHERRY_BLOSSOM("Cherry Blossom Cape", "Cherry_Blossom_Cape.png"),
+    FOLLOWERS("Follower's Cape", "Follower's_Cape.png"),
+    PURPLE_HEART("Purple Heart Cape", "Purple_Heart_Cape.png"),
+    FIFTEEN_ANNIVERSARY("15th Anniversary Cape", "15th_Anniversary_Cape.png"),
+    MCC_15TH_YEAR("MCC 15th Year Cape", "MCC_15th_Year_Cape.png"),
+    MOJANG_OFFICE("Mojang Office Cape", "Mojang_Office_Cape.png"),
+    HOME("Home Cape", "Home_Cape.png"),
+    MENACE("Menace Cape", "Menace_Cape.png"),
+    YEARN("Yearn Cape", "Yearn_Cape.png"),
+    COPPER("Copper Cape", "Copper_Cape.png"),
+    ZOMBIE_HORSE("Zombie Horse Cape", "Zombie_Horse_Cape.png"),
+    BUILDER("Builder Cape", "Builder_Cape.png"),
+
+    // Personal capes
+    BACON("Bacon Cape", "Bacon_Cape.png"),
+    MILLIONTH_CUSTOMER("Millionth Customer Cape", "Millionth_Customer_Cape.png"),
+    DB("dB Cape", "dB_Cape.png"),
+    SNOWMAN("Snowman Cape", "Snowman_Cape.png"),
+    CHEAPSH0T("Cheapsh0t's Cape", "Cheapsh0t's_Cape.png"),
+    SPADE("Spade Cape", "Spade_Cape.png"),
+    PRISMARINE("Prismarine Cape", "Prismarine_Cape.png"),
+    TURTLE("Turtle Cape", "Turtle_Cape.png"),
+    BIRTHDAY("Birthday Cape", "Birthday_Cape.png"),
+    VALENTINE("Valentine Cape", "Valentine_Cape.png"),
+    OXEYE("Oxeye Cape", "Oxeye_Cape.png"),
+    BLUEPRINT("Blueprint Cape", "Blueprint_Cape.png"),
+
+    // Competition capes
+    SCROLLS_CHAMPION("Scrolls Champion Cape", "Scrolls_Champion_Cape.png"),
+    COBALT("Cobalt Cape", "Cobalt_Cape.png"),
+
+    // Volunteer capes
+    TRANSLATOR("Translator Cape", "Translator_Cape.png"),
+    CHINESE_TRANSLATOR("Chinese Translator Cape", "Chinese_Translator_Cape.png"),
+    MODERATOR("Moderator Cape", "Moderator_Cape.png"),
+    REALMS_MAPMAKER("Realms MapMaker Cape", "Realms_MapMaker_Cape.png"),
+
+    // Temporary capes
+    CHRISTMAS_2010("Christmas 2010 Cape", "Christmas_2010_Cape.png"),
+    NEW_YEAR_2011("New Year 2011 Cape", "New_Year_2011_Cape.png"),
+    XBOX_1ST_BIRTHDAY("Xbox 1st Birthday Cape", "Xbox_1st_Birthday_Cape.png"),
+
+    // API testing capes
+    SIZE_M("size-m cape", "size-m_cape.png"),
+    SNAIL("Snail cape", "Snail_cape.png"),
+    ICU_1("ICU cape #1", "ICU_cape_#1.png"),
+    ICU_2("ICU cape #2", "ICU_cape_#2.png"),
+    FROG("Frog cape", "Frog_cape.png"),
+
+    // Vote Update capes
+    AWESOM("Awesom caep", "Awesom_caep.png"),
+    BLONK("Blonk caep", "Blonk_caep.png"),
+    NO_CIRCLE("No-Circle caep", "No-Circle_caep.png"),
+    NYAN("Nyan caep", "Nyan_caep.png"),
+    SQUID("Squid caep", "Squid_caep.png"),
+    VETERINARIAN("Veterinarian caep", "Veterinarian_caep.png"),
+
+    // Unused capes
+    UNUSED_1("Unused #1 cape", "Unused_#1_cape.png"),
+    UNUSED_2("Unused #2 cape", "Unused_#2_cape.png"),
+    UNUSED_3("Unused #3 cape", "Unused_#3_cape.png"),
+    UNUSED_4("Unused #4 cape", "Unused_#4_cape.png"),
+    UNUSED_5("Unused #5 cape", "Unused_#5_cape.png"),
+    UNUSED_6("Unused #6 cape", "Unused_#6_cape.png"),
+    UNUSED_7("Unused #7 cape", "Unused_#7_cape.png"),
+    UNUSED_8("Unused #8 cape", "Unused_#8_cape.png"),
+    UNUSED_9("Unused #9 cape", "Unused_#9_cape.png"),
+    UNUSED_10("Unused #10 cape", "Unused_#10_cape.png"),
+    UNUSED_11("Unused #11 cape", "Unused_#11_cape.png"),
+    UNUSED_12("Unused #12 cape", "Unused_#12_cape.png"),
+    UNUSED_13("Unused #13 cape", "Unused_#13_cape.png"),
+    UNUSED_14("Unused #14 cape", "Unused_#14_cape.png");
 
     public final String name;
     public final String resource;
 
-    private Cape(String name) {
+    private static final Cape[] copy = values();
+
+    private Cape(String name, String resource) {
         this.name = name;
-        this.resource = name.toLowerCase().replace(" ", "_") + ".png";
-        CAPES.add(this);
+        this.resource = resource;
     }
 
     public Cape next() {
-        int index = CAPES.indexOf(this);
-        return CAPES.get((index + 1) % CAPES.size());
+        return copy[(this.ordinal() + 1) % copy.length];
     }
 
     public Cape prev() {
-        int index = CAPES.indexOf(this);
-        return CAPES.get(index - 1 >= 0 ? index - 1 : CAPES.size() - 1);
+        return copy[this.ordinal() - 1 >= 0 ? this.ordinal() - 1 : copy.length - 1];
     }
 
     public static Cape getCape(String name) {
-        for (Cape cape : CAPES) {
+        for (Cape cape : copy) {
             if (cape.resource.equals(name)) {
                 return cape;
             }
         }
-        return minecon_2011;
-    }
 
-    public static List<Cape> values() {
-        return Collections.unmodifiableList(CAPES);
-    }
-
-    @Override
-    public String toString() {
-        return name;
+        return MINECON_2011;
     }
 }
