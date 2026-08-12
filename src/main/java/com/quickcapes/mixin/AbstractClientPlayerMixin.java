@@ -1,6 +1,5 @@
 package com.quickcapes.mixin;
 
-import com.quickcapes.QuickCapes;
 import com.quickcapes.cape.CapeSetter;
 import net.minecraft.client.Minecraft;
 import net.minecraft.client.entity.AbstractClientPlayer;
